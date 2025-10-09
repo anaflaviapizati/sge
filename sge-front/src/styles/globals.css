@@ -1,0 +1,77 @@
+/* Estilos globais para ocupar toda a largura da tela */
+
+/* Reset básico */
+* {
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+/* Garantir que o header ocupe toda a largura */
+.navbar {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* Garantir que o footer ocupe toda a largura */
+footer {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* Container fluid com padding adequado */
+.container-fluid {
+  width: 100%;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+/* Remover margens desnecessárias */
+.row {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+/* Garantir que as páginas ocupem toda a largura disponível */
+main {
+  width: 100%;
+  min-height: calc(100vh - 200px); /* Altura total menos header e footer */
+}
+
+/* Cards responsivos */
+.card {
+  width: 100%;
+}
+
+/* Tabelas responsivas */
+.table-responsive {
+  width: 100%;
+}
+
+/* Botões e elementos de ação */
+.btn-group {
+  width: auto;
+}
+
+/* Estilos para dispositivos móveis */
+@media (max-width: 768px) {
+  .container-fluid {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  
+  .navbar-brand {
+    font-size: 1rem;
+  }
+  
+  .card-body {
+    padding: 1rem;
+  }
+}
