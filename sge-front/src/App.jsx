@@ -6,7 +6,6 @@ import Login from './pages/Login';
 import Register from './pages/Register';
 import Home from './pages/Home';
 import Alunos from './pages/Alunos';
-import TestAlunos from './TestAlunos';
 
 function App() {
     const { isAuthenticated, loading } = useAuth();
@@ -50,7 +49,6 @@ function App() {
                                 <Routes>
                                     <Route path="/" element={<Home />} />
                                     <Route path="/alunos" element={<Alunos />} />
-                                    <Route path="/test" element={<TestAlunos />} />
                                     {/* Adicione mais rotas conforme necessário */}
                                 </Routes>
                             </Layout>
