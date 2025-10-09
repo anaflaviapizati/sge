@@ -31,3 +31,40 @@ build/
 
 ### VS Code ###
 .vscode/
+
+### Logs ###
+*.log
+logs/
+
+### Database ###
+database_setup.sql
+
+### Frontend ###
+sge-front/node_modules/
+sge-front/dist/
+sge-front/build/
+sge-front/.env
+sge-front/.env.local
+sge-front/.env.development.local
+sge-front/.env.test.local
+sge-front/.env.production.local
+
+### OS ###
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+### Temporary files ###
+*.tmp
+*.temp
+*.swp
+*.swo
+*~
+
+### Application specific ###
+application-local.properties
+application-dev.properties
