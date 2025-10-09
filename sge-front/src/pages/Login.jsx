@@ -55,7 +55,7 @@ export default function Login() {
                             <div className="card-body p-4">
                                 <div className="text-center mb-3">
                                     <div className="d-flex flex-column align-items-center">
-                                        <span className="fs-1 fw-bold mb-2">SGE</span>
+                                        <span className="fs-1 fw-boldmb-2">SGE</span>
                                         <span className="text-muted">Sistema de Gerenciamento de Estágios</span>
                                         <div
                                             style={{
