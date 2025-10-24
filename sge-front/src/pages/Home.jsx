@@ -12,7 +12,6 @@ export default function Home() {
                         Este sistema foi desenvolvido para facilitar e organizar todo o processo de estágio, tanto para estudantes quanto para orientadores e instituições de ensino. Aqui, você poderá gerenciar todas as etapas do seu estágio de forma prática, segura e centralizada.
                     </p>
                     <div className="row justify-content-center mb-5">
-                        {/* Card Como funciona */}
                         <div className="col-md-5 mb-4 mb-md-0">
                             <div className="card h-100">
                                 <div className="card-header" style={{ background: '#ff5252', color: '#fff' }}>
@@ -28,7 +27,6 @@ export default function Home() {
                                 </div>
                             </div>
                         </div>
-                        {/* Card Ajuda */}
                         <div className="col-md-5">
                             <div className="card h-100">
                                 <div className="card-header" style={{ background: '#ff5252', color: '#fff' }}>

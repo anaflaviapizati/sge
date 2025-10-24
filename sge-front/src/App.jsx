@@ -5,7 +5,13 @@ import Layout from './components/Layout';
 import Login from './pages/Login';
 import Register from './pages/Register';
 import Home from './pages/Home';
-import Alunos from './pages/Alunos';
+import Contratos from './pages/Contratos.jsx';
+import Usuario from './pages/Usuario';
+import NovoContrato from './pages/novoContrato';
+import DocumentosContrato from './pages/DocumentosContrato';
+import VisualizarContrato from './pages/VisualizarContrato';
+import Ajuda from './pages/Ajuda';
+
 
 function App() {
     const { isAuthenticated, loading } = useAuth();
@@ -27,35 +33,40 @@ function App() {
         <Router>
             <Routes>
                 {/* Rota de login - sem header/footer */}
-                <Route 
-                    path="/login" 
+                <Route
+                    path="/login"
                     element={
                         isAuthenticated ? <Navigate to="/" replace /> : <Login />
-                    } 
+                    }
                 />
-                <Route 
-                    path="/register" 
+                <Route
+                    path="/register"
                     element={
                         isAuthenticated ? <Navigate to="/" replace /> : <Register />
-                    } 
+                    }
                 />
-                
+
                 {/* Rotas protegidas - com header/footer */}
-                <Route 
-                    path="/*" 
+                <Route
+                    path="/*"
                     element={
                         isAuthenticated ? (
                             <Layout>
                                 <Routes>
                                     <Route path="/" element={<Home />} />
-                                    <Route path="/alunos" element={<Alunos />} />
-                                    {/* Adicione mais rotas conforme necessário */}
+                                    <Route path="/contratos" element={<Contratos />} />
+                                    <Route path="/usuario" element={<Usuario />} />
+                                    <Route path="/ajuda" element={<Ajuda />} />
+                                    <Route path="/novo-contrato" element={<NovoContrato />} />
+                                    <Route path="/contratos/:id" element={<VisualizarContrato />} />
+                                    <Route path="/contratos/:id/documentos" element={<DocumentosContrato />} />
+
                                 </Routes>
                             </Layout>
                         ) : (
                             <Navigate to="/login" replace />
                         )
-                    } 
+                    }
                 />
             </Routes>
         </Router>

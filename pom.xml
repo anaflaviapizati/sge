@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.sge</groupId>
-	<artifactId>demo</artifactId>
+	<artifactId>main</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>sge</name>
 	<description>Demo project for Spring Boot</description>
