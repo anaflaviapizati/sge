@@ -1,4 +1,4 @@
-/* Estilos globais para ocupar toda a largura da tela */
+/* Estilos globais com design system integrado */
 
 /* Reset básico */
 * {
@@ -17,6 +17,9 @@ html, body, #root {
   width: 100%;
   margin: 0;
   padding: 0;
+  background-color: hsl(var(--card));
+  border-bottom: 1px solid hsl(var(--border));
+  box-shadow: var(--shadow-soft);
 }
 
 /* Garantir que o footer ocupe toda a largura */
@@ -24,6 +27,8 @@ footer {
   width: 100%;
   margin: 0;
   padding: 0;
+  background-color: hsl(var(--muted));
+  border-top: 1px solid hsl(var(--border));
 }
 
 /* Container fluid com padding adequado */
@@ -42,12 +47,30 @@ footer {
 /* Garantir que as páginas ocupem toda a largura disponível */
 main {
   width: 100%;
-  min-height: calc(100vh - 200px); /* Altura total menos header e footer */
+  min-height: calc(100vh - 200px);
+  background-color: hsl(var(--background));
 }
 
 /* Cards responsivos */
 .card {
   width: 100%;
+  background-color: hsl(var(--card));
+  color: hsl(var(--card-foreground));
+  border: 1px solid hsl(var(--border));
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-soft);
+  transition: var(--transition-smooth);
+}
+
+.card:hover {
+  box-shadow: var(--shadow-medium);
+}
+
+.card-header {
+  background: var(--gradient-primary);
+  color: hsl(var(--primary-foreground));
+  border-bottom: 1px solid hsl(var(--border));
+  border-radius: var(--radius) var(--radius) 0 0;
 }
 
 /* Tabelas responsivas */
@@ -55,9 +78,116 @@ main {
   width: 100%;
 }
 
+.table {
+  background-color: hsl(var(--card));
+  color: hsl(var(--foreground));
+}
+
+.table thead {
+  background-color: hsl(var(--muted));
+  color: hsl(var(--muted-foreground));
+}
+
+.table tbody tr {
+  transition: var(--transition-smooth);
+}
+
+.table tbody tr:hover {
+  background-color: hsl(var(--muted) / 0.5);
+}
+
 /* Botões e elementos de ação */
 .btn-group {
   width: auto;
+}
+
+.btn {
+  border-radius: calc(var(--radius) - 2px);
+  transition: var(--transition-smooth);
+  font-weight: 500;
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-soft);
+}
+
+.btn:active {
+  transform: translateY(0);
+}
+
+/* Navbar customizado */
+.nav-link {
+  color: hsl(var(--foreground));
+  transition: var(--transition-smooth);
+  position: relative;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: hsl(var(--primary));
+}
+
+.nav-link.active::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: hsl(var(--primary));
+  border-radius: 2px;
+}
+
+/* Alerts customizados */
+.alert {
+  border-radius: var(--radius);
+  border: 1px solid hsl(var(--border));
+  box-shadow: var(--shadow-soft);
+}
+
+.alert-danger {
+  background-color: hsl(var(--destructive) / 0.1);
+  border-color: hsl(var(--destructive));
+  color: hsl(var(--destructive));
+}
+
+.alert-success {
+  background-color: hsl(142 76% 36% / 0.1);
+  border-color: hsl(142 76% 36%);
+  color: hsl(142 76% 36%);
+}
+
+.alert-info {
+  background-color: hsl(var(--primary) / 0.1);
+  border-color: hsl(var(--primary));
+  color: hsl(var(--primary));
+}
+
+.alert-warning {
+  background-color: hsl(38 92% 50% / 0.1);
+  border-color: hsl(38 92% 50%);
+  color: hsl(38 92% 50%);
+}
+
+/* Inputs customizados */
+.form-control:focus,
+.form-select:focus {
+  border-color: hsl(var(--ring));
+  box-shadow: 0 0 0 0.2rem hsl(var(--ring) / 0.25);
+}
+
+.form-control,
+.form-select {
+  border-radius: calc(var(--radius) - 2px);
+  transition: var(--transition-smooth);
+}
+
+/* Badges customizados */
+.badge {
+  border-radius: calc(var(--radius) - 4px);
+  padding: 0.25rem 0.5rem;
+  font-weight: 500;
 }
 
 /* Estilos para dispositivos móveis */
@@ -74,4 +204,41 @@ main {
   .card-body {
     padding: 1rem;
   }
+  
+  .btn {
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+  }
+}
+
+/* Smooth scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Loading spinner customizado */
+.spinner-border {
+  border-color: hsl(var(--primary)) transparent hsl(var(--primary)) transparent;
+}
+
+/* Shadow utilities */
+.shadow-soft {
+  box-shadow: var(--shadow-soft);
+}
+
+.shadow-medium {
+  box-shadow: var(--shadow-medium);
+}
+
+.shadow-large {
+  box-shadow: var(--shadow-large);
+}
+
+/* Gradient utilities */
+.bg-gradient-primary {
+  background: var(--gradient-primary);
+}
+
+.bg-gradient-card {
+  background: var(--gradient-card);
 }

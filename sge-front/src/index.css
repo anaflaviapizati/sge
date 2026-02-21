@@ -1,25 +1,76 @@
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+  --background: 0 0% 98%;
+  --foreground: 24 9.8% 10%;
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  --card: 0 0% 100%;
+  --card-foreground: 24 9.8% 10%;
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  --popover: 0 0% 100%;
+  --popover-foreground: 24 9.8% 10%;
+
+  --primary: 20 89% 58%;
+  --primary-foreground: 0 0% 100%;
+
+  --secondary: 24 10% 95%;
+  --secondary-foreground: 24 9.8% 10%;
+
+  --muted: 24 10% 95%;
+  --muted-foreground: 24 5.4% 45%;
+
+  --accent: 20 89% 58%;
+  --accent-foreground: 0 0% 100%;
+
+  --destructive: 0 84.2% 60.2%;
+  --destructive-foreground: 0 0% 100%;
+
+  --border: 24 10% 88%;
+  --input: 24 10% 88%;
+  --ring: 20 89% 58%;
+
+  --radius: 0.75rem;
+
+  --gradient-primary: linear-gradient(135deg, hsl(20 89% 58%), hsl(30 100% 62%));
+  --gradient-card: linear-gradient(180deg, hsl(0 0% 100%), hsl(24 10% 98%));
+  
+  --shadow-soft: 0 2px 8px -2px hsl(20 89% 58% / 0.1);
+  --shadow-medium: 0 4px 16px -4px hsl(20 89% 58% / 0.15);
+  --shadow-large: 0 8px 32px -8px hsl(20 89% 58% / 0.2);
+  
+  --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
+.dark {
+  --background: 24 9.8% 8%;
+  --foreground: 0 0% 98%;
+
+  --card: 24 9.8% 10%;
+  --card-foreground: 0 0% 98%;
+
+  --popover: 24 9.8% 10%;
+  --popover-foreground: 0 0% 98%;
+
+  --primary: 20 89% 58%;
+  --primary-foreground: 0 0% 100%;
+
+  --secondary: 24 9.8% 15%;
+  --secondary-foreground: 0 0% 98%;
+
+  --muted: 24 9.8% 15%;
+  --muted-foreground: 24 5.4% 65%;
+
+  --accent: 20 89% 58%;
+  --accent-foreground: 0 0% 100%;
+
+  --destructive: 0 62.8% 50%;
+  --destructive-foreground: 0 0% 100%;
+
+  --border: 24 9.8% 18%;
+  --input: 24 9.8% 18%;
+  --ring: 20 89% 58%;
 }
 
 body {
@@ -27,7 +78,12 @@ body {
   padding: 0;
   min-width: 320px;
   min-height: 100vh;
-  background-color: #f8f9fa;
+  background-color: hsl(var(--background));
+  color: hsl(var(--foreground));
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 /* Garantir que ocupe toda a largura */
@@ -37,45 +93,37 @@ html, body, #root {
   padding: 0;
 }
 
-/* Remover margens padrão do Bootstrap */
+/* Container fluid com padding adequado */
 .container-fluid {
   padding-left: 15px;
   padding-right: 15px;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+/* Animações suaves */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+@keyframes slide-up {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0);
+  }
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+.animate-fade-in {
+  animation: fade-in 0.5s ease-out;
+}
+
+.animate-slide-up {
+  animation: slide-up 0.3s ease-out;
 }

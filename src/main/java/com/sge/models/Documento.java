@@ -19,6 +19,10 @@ public class Documento {
     @JoinColumn(name = "contrato_id", nullable = false)
     private Contrato contrato;
 
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "criado_por_id")
+    private Usuario criadoPor;
+
     @Column(nullable = false)
     private String nome;
 
@@ -68,5 +72,13 @@ public class Documento {
 
     public LocalDateTime getCriadoEm() {
         return criadoEm;
+    }
+
+    public Usuario getCriadoPor() {
+        return criadoPor;
+    }
+
+    public void setCriadoPor(Usuario criadoPor) {
+        this.criadoPor = criadoPor;
     }
 }
